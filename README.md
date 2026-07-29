@@ -67,7 +67,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 > **Note on hyperparameter changes:**
 > 논문 세팅(SGD, 1000 epoch)으로 학습했을 때 training error가 1000 epoch까지도 지속적으로 감소하는 것을 확인했고, 이는 underfitting 상태로 판단
-> 이에 optimizer를 Adam으로 변경하고 epoch 수를 200으로 줄여 재학습한 결과, 더 빠르게 충분한 수렴에 도달했으며, 이 상태에서 평가한 성능이 논문에서 보고된 성능과 유사 (자세한 내용은 [Results](##Reproduction 결과) 참고).
+> 이에 optimizer를 Adam으로 변경하고 epoch 수를 200으로 줄여 재학습한 결과, 더 빠르게 충분한 수렴에 도달했으며, 이 상태에서 평가한 성능이 논문에서 보고된 성능과 유사 (자세한 내용은 [Reproduction 결과](## Reproduction 결과) 참고).
 
 ## Reproduction 결과
 
