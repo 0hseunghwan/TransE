@@ -62,7 +62,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Distance function | L1 | L1 |
 | Learning rate | 0.01 | 0.001 |
 | Optimizer | SGD | Adam |
-| Batch size | - | 1024 |
+| Batch size | - | 1,024 |
 | Epoch | 1000 | 200 |
 
 > **Note on hyperparameter changes:**
