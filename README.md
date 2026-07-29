@@ -63,7 +63,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Learning rate | 0.01 | 0.001 |
 | Optimizer | SGD | Adam |
 | Batch size | - | 1,024 |
-| Epoch | 1000 | 200 |
+| Epoch | 1,000 | 200 |
 
 > **Note on hyperparameter changes:**
 > 논문 세팅(SGD, 1000 epoch)으로 학습했을 때 training error가 1000 epoch까지도 지속적으로 감소하는 것을 확인했고, 이는 underfitting 상태로 판단
