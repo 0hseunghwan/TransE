@@ -56,7 +56,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 ## 주요 하이퍼파라미터
 
 | Parameter | Paper | This Implementation |
-|---|;---;|;---;|
+|---|:---:|:---:|
 | Embedding dimension $k$ | 50 | 50 |
 | Margin $\gamma$ | 1.0 | 1.0 |
 | Distance function | L1 | L1 |
