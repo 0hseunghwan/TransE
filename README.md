@@ -82,6 +82,5 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 
 ## 참고문헌
-
 Bordes, A., Usunier, N., Garcia-Duran, A., Weston, J., & Yakhnenko, O. (2013).
-Translating Embeddings for Modeling Multi-relational Data. *NeurIPS*.
+[Translating Embeddings for Modeling Multi-relational Data](https://proceedings.neurips.cc/paper_files/paper/2013/hash/1cecc7a77928ca8133fa24680a88d2f9-Abstract.html). *NeurIPS*.
