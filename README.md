@@ -11,8 +11,22 @@
 
 ## 데이터셋
 
-[FB15k-237](https://www.microsoft.com/en-us/download/details.aspx?id=52312) — Freebase 기반 표준 KGE 벤치마크.
-원본 FB15k에서 head-tail을 뒤집은 역방향 관계(`!/people/person/nationality` 류)를 제거한 버전 (논문에서의 동일한 데이터 전처리 과정)
+[FB15k](https://huggingface.co/datasets/VLyb/FB15k) — Freebase 기반 표준 KGE 벤치마크.
+
+### FB15k
+Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중, 실험에 적합한 규모로 축소한 서브셋
+
+- Wikilinks 데이터베이스에도 존재하는 엔티티만 선택
+- Freebase 내에서 최소 100회 이상 등장하는 엔티티/관계만 선택
+- `/people/person/nationality`의 역방향 관계인 `!/people/person/nationality`처럼, head와 tail만 뒤바꾼 중복 관계는 제거
+
+**통계**
+
+| 항목 | 개수 |
+|------|------|
+| Triplets | 592,213 |
+| Entities | 14,951 |
+| Relationships | 1,345 |
 
 ## 실행 방법
 
