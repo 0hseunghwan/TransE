@@ -35,20 +35,35 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 
 ### 로컬에서 실행
+
+1. Git Clone
 ```bash
-pip install torch jupyter
-jupyter notebook TransE.ipynb
+   git clone https://github.com/0hseunghwan/TransE_implementation.git
+   cd TransE_implementation
 ```
 
-## 주요 하이퍼파라미터 (FB15k 원 논문 세팅 참고)
+2. Install Dependencies
+```bash
+   pip install -r requirements.txt
+```
 
-| 파라미터 | 값 |
-|---|---|
-| 임베딩 차원 $k$ | 50 |
-| Margin $\gamma$ | 1.0 |
-| 거리 함수 | L1 |
-| Learning rate | 0.01 |
-| Optimizer | SGD |
+3. Run the Notebook
+```bash
+   jupyter notebook TransE.ipynb
+```
+   ※ 노트북 실행 시 FB15k 데이터셋을 자동으로 다운로드/로드 (별도 준비 불필요)
+
+## 주요 하이퍼파라미터
+
+| Parameter | Paper | This Implementation |
+|---|---|---|
+| Embedding dimension $k$ | 50 | 50 |
+| Margin $\gamma$ | 1.0 | 1.0 |
+| Distance function | L1 | L1 |
+| Learning rate | 0.01 | 0.01 |
+| Optimizer | SGD | Adam |
+| Batch size | - | 1024 |
+| Epoch | 1000 | 200|
 
 ## 참고문헌
 
