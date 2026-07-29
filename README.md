@@ -71,14 +71,14 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 ## Reproduction 결과
 
-| Setting | Metric | Paper | This Implementation |
+| Setting | Metric | Paper result | Reproduction result |
 |---|---|:---:|:---:|
 | Raw | Mean Rank | 243 | 231.2 |
 | Raw | Hits@10 (%) | 34.9 | 36.9 |
 | Filtered | Mean Rank | 125 | 113.8 |
 | Filtered | Hits@10 (%) | 47.1 | 49.4 |
 
-> 논문(Bordes et al., 2013) Table 3 기준 TransE(FB15k) 결과이며, 본 구현은 이와 유사한 성능 보임
+> 논문(Bordes et al., 2013) Table 3 (Link prediction results) 결과이며, 본 구현은 이와 유사한 성능 보임
 
 
 ## 참고문헌
