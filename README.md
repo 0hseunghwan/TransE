@@ -1,7 +1,7 @@
 # TransE Implementation & Reproduction
 
 *Translating Embeddings for Modeling Multi-relational Data* (NeurIPS, 2013)
-의 알고리즘을 PyTorch로 직접 구현하고, Link Prediction 실험의 성능을 재현한 코드
+의 알고리즘을 PyTorch로 직접 구현하고, Link prediction 실험의 성능을 재현한 코드
 
 ## 구현 내용
 
