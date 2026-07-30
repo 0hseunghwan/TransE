@@ -73,10 +73,10 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 | Setting | Metric | Paper result | Reproduction result |
 |---|---|:---:|:---:|
-| Raw | Mean Rank | 243 | 231.2 |
+| Raw | Mean Rank | 243 | 227.4 |
+| Filtered | Mean Rank | 125 | 110.5 |
 | Raw | Hits@10 (%) | 34.9 | 36.9 |
-| Filtered | Mean Rank | 125 | 113.8 |
-| Filtered | Hits@10 (%) | 47.1 | 49.4 |
+| Filtered | Hits@10 (%) | 47.1 | 49.2 |
 
 > 논문(Bordes et al., 2013) Table 3 (Link prediction results) 결과이며, 본 구현은 이와 유사한 성능 보임
 
