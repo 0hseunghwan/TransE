@@ -38,8 +38,8 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 
 1. Git Clone
 ```bash
-   git clone https://github.com/0hseunghwan/TransE_implementation.git
-   cd TransE_implementation
+   git clone https://github.com/0hseunghwan/TransE.git
+   cd TransE
 ```
 
 2. Install Dependencies
