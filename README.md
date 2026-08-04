@@ -78,7 +78,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Raw | Hits@10 (%) | 34.9 | 37.1 |
 | Filtered | Hits@10 (%) | 47.1 | 49.4 |
 
-> 논문(Bordes et al., 2013) Table 3 (Link prediction results) 결과이며, 본 구현은 이와 유사한 성능 보
+> 논문(Bordes et al., 2013) Table 3 (Link prediction results) 결과이며, 본 구현은 이와 유사한 성능 보임
 
 ## 참고문헌
 [Bordes, A., Usunier, N., Garcia-Duran, A., Weston, J., & Yakhnenko, O. (2013). Translating Embeddings for Modeling Multi-relational Data. *NeurIPS*.](https://proceedings.neurips.cc/paper_files/paper/2013/file/1cecc7a77928ca8133fa24680a88d2f9-Paper.pdf)
