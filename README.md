@@ -31,7 +31,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 ## 실행 방법
 
 ### Colab에서 바로 실행
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/0hseunghwan/TransE_implementation/blob/main/TransE.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/0hseunghwan/TransE/blob/main/TransE.ipynb)
 
 
 ### 로컬에서 실행
