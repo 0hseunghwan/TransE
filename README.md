@@ -1,24 +1,24 @@
 # TransE Implementation & Reproduction
 
-*Translating Embeddings for Modeling Multi-relational Data* (NeurIPS, 2013)
-의 알고리즘을 PyTorch로 직접 구현하고, Link prediction 실험의 성능을 재현한 코드
+Code that directly implements the algorithm from *Translating Embeddings for Modeling Multi-relational Data* (NeurIPS, 2013)
+in PyTorch and reproduces the performance of the Link prediction experiment
 
-## 구현 내용
+## Implementation Details
 
-- **초기화**: $Unif(-6/\sqrt{k}, 6/\sqrt{k})$ 로 entity/relation 임베딩 초기화, relation은 초기화 직후 정규화
-- **학습 루프**: 매 epoch마다 entity normalize → mini-batch 샘플링 → negative sampling (corrupted triplet) → margin-based ranking loss
-- **평가**: Link prediction (raw / filtered 두 세팅), Mean Rank, Hits@10
+- **Initialization**: Initialize entity/relation embeddings with $Unif(-6/\sqrt{k}, 6/\sqrt{k})$, normalize relations right after initialization
+- **Training loop**: Every epoch, entity normalize → mini-batch sampling → negative sampling (corrupted triplet) → margin-based ranking loss
+- **Evaluation**: Link prediction (raw / filtered settings), Mean Rank, Hits@10
 
-## 데이터셋
+## Dataset
 
-[FB15k](https://huggingface.co/datasets/VLyb/FB15k) — Freebase 기반 표준 KGE 벤치마크
+[FB15k](https://huggingface.co/datasets/VLyb/FB15k) — a standard KGE benchmark based on Freebase
 
 ### FB15k
-Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중, 실험에 적합한 규모로 축소한 서브셋
+A subset reduced to a scale suitable for experiments, out of the entire Freebase (approx. 1.2 billion triples, over 80 million entities)
 
-- Wikilinks 데이터베이스에도 존재하는 엔티티만 선택
-- Freebase 내에서 최소 100회 이상 등장하는 엔티티/관계만 선택
-- `/people/person/nationality`의 역방향 관계인 `!/people/person/nationality`처럼, head와 tail만 뒤바꾼 중복 관계는 제거
+- Only entities that also exist in the Wikilinks database are selected
+- Only entities/relations that appear at least 100 times within Freebase are selected
+- Duplicate relations that are just the reverse of another (head and tail swapped), like `!/people/person/nationality` being the reverse of `/people/person/nationality`, are removed
 
 **통계**
 
@@ -28,13 +28,13 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Entities | 14,951 |
 | Relationships | 1,345 |
 
-## 실행 방법
+## How to Run
 
-### Colab에서 바로 실행
+### Run directly in Colab
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/0hseunghwan/TransE/blob/main/TransE.ipynb)
 
 
-### 로컬에서 실행
+### Run locally
 
 1. Git Clone
 ```bash
@@ -51,9 +51,9 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 ```bash
    jupyter notebook TransE.ipynb
 ```
-   ※ 노트북 실행 시 FB15k 데이터셋을 자동으로 다운로드/로드 (별도 준비 불필요)
+   ※ The FB15k dataset is automatically downloaded/loaded when the notebook runs (no separate setup needed)
 
-## 주요 하이퍼파라미터
+## Key Hyperparameters
 
 | Parameter | Paper | This Implementation |
 |---|:---:|:---:|
@@ -66,10 +66,10 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Epoch | 1,000 | 200 |
 
 > **Note on hyperparameter changes:**
-> 논문 세팅(SGD, 1000 epoch)으로 학습했을 때 training error가 1000 epoch까지도 지속적으로 감소하는 것을 확인했고, 이는 underfitting 상태로 판단
-> 이에 optimizer를 Adam으로 변경하고 epoch 수를 200으로 줄여 재학습한 결과, 더 빠르게 충분한 수렴에 도달했으며, 이 상태에서 평가한 성능이 논문에서 보고된 성능과 유사
+> When training with the paper's settings (SGD, 1000 epochs), the training error kept decreasing continuously even up to 1000 epochs, which was judged to be an underfitting state
+> After changing the optimizer to Adam and reducing the number of epochs to 200 and retraining, convergence was reached much faster, and the performance evaluated at this state was similar to the performance reported in the paper
 
-## Reproduction 결과
+## Reproduction Results
 
 | Setting | Metric | Paper result | Reproduction result |
 |---|---|:---:|:---:|
@@ -78,7 +78,7 @@ Freebase 전체(약 12억 개의 트리플, 8천만 개 이상의 엔티티) 중
 | Raw | Hits@10 (%) | 34.9 | 37.1 |
 | Filtered | Hits@10 (%) | 47.1 | 49.4 |
 
-> 논문(Bordes et al., 2013) Table 3 (Link prediction results) 결과이며, 본 구현은 이와 유사한 성능 보임
+> This is the result from Table 3 (Link prediction results) of the paper (Bordes et al., 2013), and this implementation shows similar performance
 
-## 참고문헌
+## References
 [Bordes, A., Usunier, N., Garcia-Duran, A., Weston, J., & Yakhnenko, O. (2013). Translating Embeddings for Modeling Multi-relational Data. *NeurIPS*.](https://proceedings.neurips.cc/paper_files/paper/2013/file/1cecc7a77928ca8133fa24680a88d2f9-Paper.pdf)
