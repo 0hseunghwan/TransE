@@ -20,9 +20,9 @@ A subset reduced to a scale suitable for experiments, out of the entire Freebase
 - Only entities/relations that appear at least 100 times within Freebase are selected
 - Duplicate relations that are just the reverse of another (head and tail swapped), like `!/people/person/nationality` being the reverse of `/people/person/nationality`, are removed
 
-**통계**
+**Statistics**
 
-| 항목 | 개수 |
+| Item | Count |
 |------|------|
 | Triplets | 592,213 |
 | Entities | 14,951 |
